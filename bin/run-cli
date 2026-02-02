@@ -1,0 +1,10 @@
+#!/bin/bash
+IMAGE_NAME="cooklang-recipes"
+
+# Build l'image si elle n'existe pas
+if ! docker image inspect "$IMAGE_NAME" &>/dev/null; then
+    echo "Building image $IMAGE_NAME..."
+    docker build -t "$IMAGE_NAME" "$(dirname "$0")/.."
+fi
+
+docker run --rm -v "$(pwd)":/recipes "$IMAGE_NAME" "$@"
