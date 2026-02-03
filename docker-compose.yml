@@ -6,7 +6,7 @@ services:
 
     # Écoute uniquement en local (nginx en frontal obligatoire)
     ports:
-      - 127.0.0.1:9080:9080
+      - 9080:9080
 
     volumes:
       - ./recipes:/recipes:ro  # Read-only explicite
