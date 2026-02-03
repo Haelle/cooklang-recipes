@@ -18,3 +18,5 @@ services:
     cap_drop:
       - ALL
     user: "65534:65534"            # nobody:nogroup (non-root)
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
