@@ -56,7 +56,9 @@ Reprendre les tags **directement depuis la source** (frije, etc.), séparés par
 ### Étapes
 
 - Garder **exactement le même nombre d'étapes** que la recette source
-- **Conserver la formulation originale** : ne pas reformuler, réécrire ou "améliorer" le texte des étapes
+- **Conserver la formulation originale MOT POUR MOT** : ne pas reformuler, réécrire ou "améliorer" le texte des étapes
+- **Garder toutes les parenthèses** : "(selon les goûts)", "(facultatif)", "(à surveiller avec attention !)" etc.
+- **Garder les emojis** : ":D", etc. si présents dans la source
 - Une ligne vide entre chaque étape
 - Les bonus/astuces d'une étape (ex: macération optionnelle) = étape séparée dans la même section
 
@@ -157,12 +159,16 @@ Après avoir importé des recettes, **toujours relire** chaque fichier créé et
 4. **Sections** : correspondent aux groupes d'ingrédients de frije
 5. **Quantités des ingrédients** : toutes présentes (pas de `@ingrédient{}` vides)
 6. **Source URL** : correcte si externe, vide + commentaire frije sinon
+7. **Ingrédients complets** : re-vérifier contre la source que tous les ingrédients sont présents (le scraping peut en omettre, notamment sel, eau, ingrédients facultatifs)
 
 **Erreurs fréquentes à éviter :**
-- Reformuler les étapes ou notes
+- Reformuler les étapes ou notes (même légèrement !)
+- Retirer des parenthèses ou commentaires entre parenthèses
+- Remplacer des expressions par des synonymes ("pommes ça marche aussi" → "pommes acceptées" ❌)
 - Inventer des tags
 - Oublier des quantités d'ingrédients
 - Oublier des ingrédients facultatifs
+- Omettre des ingrédients "évidents" (sel, eau, poivre) mentionnés dans les étapes mais pas capturés par le scraping
 
 ## Structure du projet
 
