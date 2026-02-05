@@ -46,26 +46,53 @@ Format du commentaire frije :
 
 ### Tags
 
-Reprendre les tags **directement depuis la source** (frije, etc.), séparés par des virgules. Ne pas improviser de tags.
+Reprendre les tags **directement depuis la source** (frije, etc.), séparés par des virgules.
+
+**Règles :**
+- Ne **jamais inventer** de tags
+- Ne pas ajouter "végétarien" ou autre tag si non présent sur la source
+- Si un tag semble incorrect sur frije, ne pas le reprendre
 
 ### Étapes
 
 - Garder **exactement le même nombre d'étapes** que la recette source
+- **Conserver la formulation originale** : ne pas reformuler, réécrire ou "améliorer" le texte des étapes
 - Une ligne vide entre chaque étape
+- Les bonus/astuces d'une étape (ex: macération optionnelle) = étape séparée dans la même section
 
 ### Notes et astuces
 
-Pour les notes **visibles** (astuces, variantes), utiliser le format blockquote :
+**Option 1 : Section Notes (recommandé)**
+
+Créer une section dédiée en fin de recette :
+
+```
+== Notes ==
+
+Astuce ou variante ici.
+```
+
+**Important** :
+- Conserver le texte **exact** des notes de la source, ne jamais reformuler
+- Si les notes/variantes mentionnent des ingrédients, les mettre en `@ingrédient{quantité%unité}`
+
+**Option 2 : Blockquote inline**
+
+Pour les notes **visibles** dans le corps de la recette :
 
 ```
 > Astuce : ajouter du beurre fondu évite de graisser la poêle
 ```
 
-Pour les commentaires **cachés** (non affichés), utiliser :
+**Commentaires cachés**
+
+Pour les commentaires **non affichés** :
 
 ```
 -- Ceci est un commentaire caché
 ```
+
+Note : le champ `description` ne supporte pas le multiligne.
 
 ### Ingrédients
 
@@ -77,24 +104,48 @@ Ne pas utiliser la fonctionnalité ustensile (`#ustensile{}`).
 
 ### Sections
 
-Utiliser les sections pour organiser les recettes quand c'est pertinent :
+Les sections correspondent aux **groupes d'ingrédients** sur frije. Regarder comment les ingrédients sont organisés sur la source pour déterminer les sections.
 
 ```
 == Sauce ==
 ```
 
-Créer une section si :
+**Règles :**
+- Une section peut contenir **plusieurs étapes**
+- Les bonus/astuces liés à une étape sont une **étape séparée** dans la même section
+- La section `== Notes ==` est toujours **en fin de recette**
+- La première étape peut être dans une section (pas obligatoirement avant)
+
+**Créer une section si :**
+- Elle correspond à un groupe d'ingrédients sur frije
 - Elle regroupe **plusieurs ingrédients** (pas un seul)
 - Elle a **au moins une étape** de préparation dédiée
-- Elle représente une partie distincte de la recette (sauce, accompagnement, garniture, etc.)
 
-Exemples valides : `== Sauce ==`, `== Semoule ==`, `== Garniture ==`, `== Pâte ==`
+**Exemples de sections :**
+- Préparation : `== Oeufs ==`, `== Légumes ==`, `== Viandes ==`
+- Composants : `== Sauce ==`, `== Semoule ==`, `== Bouillon ==`, `== Pâte ==`
+- Étapes finales : `== Cuisson ==`, `== Service ==`, `== Finition ==`
+- Toujours à la fin : `== Notes ==`, `== Variante ==`, `== Variantes ==`
 
 ### Images
 
 Placer l'image avec le même nom que le fichier `.cook` :
 
 Exemple : `pate-a-crepes.cook` → `pate-a-crepes.jpg`
+
+**Récupération depuis frije :**
+
+Les images frije suivent le pattern :
+```
+https://fr.frije.com/content/recipes/{ID}/800-1.jpg
+```
+
+Télécharger avec :
+```bash
+curl -f -o nom-recette.jpg "https://fr.frije.com/content/recipes/{ID}/800-1.jpg"
+```
+
+Note : toutes les recettes frije n'ont pas forcément d'image.
 
 ## Structure du projet
 
