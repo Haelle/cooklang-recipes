@@ -147,6 +147,23 @@ curl -f -o nom-recette.jpg "https://fr.frije.com/content/recipes/{ID}/800-1.jpg"
 
 Note : toutes les recettes frije n'ont pas forcément d'image.
 
+## Vérification après import
+
+Après avoir importé des recettes, **toujours relire** chaque fichier créé et vérifier :
+
+1. **Texte des étapes** : fidèle mot pour mot à la source
+2. **Tags** : exactement ceux de frije, rien d'inventé
+3. **Notes/astuces** : texte exact, avec `@ingrédient{}` si mentionnés
+4. **Sections** : correspondent aux groupes d'ingrédients de frije
+5. **Quantités des ingrédients** : toutes présentes (pas de `@ingrédient{}` vides)
+6. **Source URL** : correcte si externe, vide + commentaire frije sinon
+
+**Erreurs fréquentes à éviter :**
+- Reformuler les étapes ou notes
+- Inventer des tags
+- Oublier des quantités d'ingrédients
+- Oublier des ingrédients facultatifs
+
 ## Structure du projet
 
 ```
