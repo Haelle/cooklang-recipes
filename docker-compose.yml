@@ -9,7 +9,7 @@ services:
       - 9080:9080
 
     volumes:
-      - ./recipes:/recipes:ro  # Read-only explicite
+      - ./recipes:/recipes:ro # Read-only explicite
 
     # === HARDENING ===
     read_only: true
@@ -17,6 +17,6 @@ services:
       - no-new-privileges:true
     cap_drop:
       - ALL
-    user: "65534:65534"            # nobody:nogroup (non-root)
+    user: "65534:65534" # nobody:nogroup (non-root)
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
