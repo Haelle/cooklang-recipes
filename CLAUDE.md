@@ -2,6 +2,10 @@
 
 Collection de recettes au format Cooklang.
 
+## Recherche de recettes sur internet
+
+Privilégier les sites de passionnés qui partagent leurs propres recettes (blogs personnels, pages individuelles) plutôt que les gros agrégateurs avec des milliers de recettes (Marmiton, HelloFresh, Old El Paso, 750g, etc.). Chercher des recettes « authentiques » portées par une personne.
+
 ## Convention pour les recettes
 
 ### Nom du fichier
