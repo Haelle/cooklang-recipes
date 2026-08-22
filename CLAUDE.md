@@ -66,6 +66,15 @@ Reprendre les tags **directement depuis la source** (frije, etc.), séparés par
 - Une ligne vide entre chaque étape
 - Les bonus/astuces d'une étape (ex: macération optionnelle) = étape séparée dans la même section
 
+### Concision
+
+Les règles ci-dessus valent pour une recette **importée telle quelle**. Dès que la recette est **adaptée** (ajouts, modifications demandées), elle est réécrite courte :
+
+- Une action par étape, à l'infinitif
+- Pas de justification ni de détail évident dans le texte des étapes
+- Pas plus de 2 ou 3 notes en fin de recette
+- Dans le doute, couper
+
 ### Notes et astuces
 
 **Option 1 : Section Notes (recommandé)**
