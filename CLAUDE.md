@@ -66,14 +66,35 @@ Reprendre les tags **directement depuis la source** (frije, etc.), séparés par
 - Une ligne vide entre chaque étape
 - Les bonus/astuces d'une étape (ex: macération optionnelle) = étape séparée dans la même section
 
-### Concision
+### Style d'écriture
 
-Les règles ci-dessus valent pour une recette **importée telle quelle**. Dès que la recette est **adaptée** (ajouts, modifications demandées), elle est réécrite courte :
+Les règles ci-dessus valent pour une recette **importée telle quelle**. Dès qu'une recette est **adaptée** (ajouts, modifications demandées) ou écrite de zéro, elle suit le style du dépôt, décrit ci-dessous. Ce style est entièrement décrit ici : pas besoin d'aller lire d'autres recettes pour le deviner.
 
-- Une action par étape, à l'infinitif
-- Pas de justification ni de détail évident dans le texte des étapes
-- Pas plus de 2 ou 3 notes en fin de recette
+**Ton et grammaire**
+- Verbes à l'**infinitif** : « Faire dorer », « Cuire », « Ciseler », « Réhydrater », « Mélanger ». Jamais « Faites dorer », jamais de « vous »
+- Pas de point final à la fin d'une étape
+- Pas de numérotation : une étape = un paragraphe, séparé du suivant par une ligne vide
+- Pas de titre d'étape en gras, la section `== ... ==` suffit
+
+**Longueur**
+- Une étape tient sur une à deux lignes
+- Les gestes liés se chaînent dans la même étape avec une virgule ou un point-virgule, plutôt que d'être éclatés : « Réhydrater le @wakamé séché{10%g} ~{10%minutes} dans l'eau froide, égoutter et presser »
+- Une recette adaptée dépasse rarement 40 lignes
 - Dans le doute, couper
+
+**Ce qu'on écrit**
+- Le geste, et le repère qui dit qu'il est réussi : « jusqu'à ce que l'eau soit claire », « elles doivent rester fermes (koshi) », « il doit avoir pris une teinte grillée »
+- Les précisions utiles entre parenthèses : « (facultatif) », « (au choix) », « (simple ou au kombu) »
+
+**Ce qu'on n'écrit pas**
+- Les justifications, le pourquoi de la technique : ça part en note si ça vaut le coup, sinon ça saute
+- Les évidences : « bien mélanger », « réserver » sans raison, un préchauffage sans température
+- Les temps et températures inventés : soit ils viennent de la source, soit ils ne sont pas dans la recette
+
+**Notes**
+- 2 ou 3 au maximum, une phrase chacune
+- Elles servent à trois choses : un écueil à éviter, une substitution d'ingrédient, une variante
+- Les ingrédients cités dans une note prennent la syntaxe `@ingrédient{}`
 
 ### Notes et astuces
 
