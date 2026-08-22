@@ -136,6 +136,8 @@ Note : le champ `description` ne supporte pas le multiligne.
 - `@ingrédient{quantité}` : ingrédient avec quantité sans unité (ex: `@oeufs{4}`)
 - `~{durée%unité}` : temps de cuisson/préparation
 
+Nommer les ingrédients **court** : `@wasabi{}` plutôt que `@pâte de wasabi{}`, `@sésame grillé{}` plutôt que `@graines de sésame blanc{}`. Garder un nom long seulement quand il apporte une indication utile à l'achat ou à la préparation : `@dashi en poudre{}`, `@filet mignon de porc{}`, `@wakamé séché{}`.
+
 Ne pas utiliser la fonctionnalité ustensile (`#ustensile{}`).
 
 ### Sections
