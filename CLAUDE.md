@@ -94,7 +94,7 @@ Les règles ci-dessus valent pour une recette **importée telle quelle**. Dès q
 **Notes**
 - 2 ou 3 au maximum, une phrase chacune
 - Elles servent à trois choses : un écueil à éviter, une substitution d'ingrédient, une variante
-- Les ingrédients cités dans une note prennent la syntaxe `@ingrédient{}`
+- Seuls les ingrédients **réellement utilisés** prennent la syntaxe `@ingrédient{}` : un ingrédient de substitution ou de variante s'écrit en texte simple, sinon il se retrouve dans la liste de courses
 
 ### Notes et astuces
 
@@ -110,7 +110,7 @@ Astuce ou variante ici.
 
 **Important** :
 - Conserver le texte **exact** des notes de la source, ne jamais reformuler
-- Si les notes/variantes mentionnent des ingrédients, les mettre en `@ingrédient{quantité%unité}`
+- Mettre en `@ingrédient{quantité%unité}` uniquement les ingrédients que la recette utilise vraiment. Un ingrédient cité comme **substitution ou variante** s'écrit en texte simple, sans `@` : il polluerait la liste de courses
 
 **Option 2 : Blockquote inline**
 
@@ -149,6 +149,7 @@ Les sections correspondent aux **groupes d'ingrédients** sur frije. Regarder co
 ```
 
 **Règles :**
+- Les sections sont dans l'**ordre de préparation** : ce qui est utilisé dans une étape a été préparé dans une section précédente
 - Une section peut contenir **plusieurs étapes**
 - Les bonus/astuces liés à une étape sont une **étape séparée** dans la même section
 - La section `== Notes ==` est toujours **en fin de recette**
