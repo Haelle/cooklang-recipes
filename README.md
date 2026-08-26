@@ -36,6 +36,18 @@ Utiliser le CLI pour diverses opérations :
 
 Note : la première exécution du CLI construira l'image Docker (compilation Rust).
 
+### Mise à jour automatique
+
+Pour garder une copie locale à jour, installer une tâche cron qui fait un `git pull` toutes les 15 minutes. Depuis le dossier du dépôt :
+
+```bash
+(crontab -l 2>/dev/null; echo "*/15 * * * * cd $(pwd) && git pull --ff-only origin master >> /tmp/cooklang-recipes-pull.log 2>&1") | crontab -
+```
+
+`--ff-only` garantit qu'aucun commit de merge n'est créé : si la copie locale a divergé, le pull échoue au lieu de fusionner en silence. Les erreurs sont consignées dans `/tmp/cooklang-recipes-pull.log`.
+
+Vérifier la tâche : `crontab -l`. La retirer : `crontab -e`, puis supprimer la ligne.
+
 ## Structure
 
 ```
