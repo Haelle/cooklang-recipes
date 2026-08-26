@@ -38,19 +38,27 @@ Note : la première exécution du CLI construira l'image Docker (compilation Rus
 
 ### Mise à jour automatique
 
-Pour garder une copie locale à jour, ouvrir le crontab :
+Le fetch doit passer par HTTPS : cron n'a pas d'agent SSH, une origine en `git@github.com:` échoue avec `Permission denied (publickey)`. Régler les URL une fois pour toutes, en gardant SSH pour le push :
+
+```bash
+cd /chemin/vers/cooklang-recipes
+git remote set-url origin https://github.com/AxineTeam/cooklang-recipes.git
+git remote set-url --push origin git@github.com:AxineTeam/cooklang-recipes.git
+```
+
+Puis ouvrir le crontab :
 
 ```bash
 crontab -e
 ```
 
-Puis y ajouter cette ligne, qui fait un `git pull` toutes les 15 minutes :
+Et y ajouter cette ligne, qui fait un `git pull` toutes les 15 minutes et consigne le résultat :
 
 ```
-*/15 * * * * cd /chemin/vers/cooklang-recipes && git pull origin master
+*/15 * * * * (date; cd /chemin/vers/cooklang-recipes && git pull origin master) >> /tmp/cooklang-pull.log 2>&1
 ```
 
-Vérifier la tâche : `crontab -l`. La retirer : `crontab -e`, puis supprimer la ligne.
+Suivre les exécutions : `tail -f /tmp/cooklang-pull.log`. Retirer la tâche : `crontab -e`, puis supprimer la ligne.
 
 ## Structure
 
