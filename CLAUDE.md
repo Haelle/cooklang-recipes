@@ -168,9 +168,11 @@ Les sections correspondent aux **groupes d'ingrédients** sur frije. Regarder co
 
 ### Images
 
-Placer l'image avec le même nom que le fichier `.cook` :
+Placer l'image avec le même nom que le fichier `.cook`, au format **WebP** :
 
-Exemple : `pate-a-crepes.cook` → `pate-a-crepes.jpg`
+Exemple : `pate-a-crepes.cook` → `pate-a-crepes.webp`
+
+Le dépôt n'héberge que des `.webp` : largeur maximale 800 px, qualité 82, métadonnées supprimées. Ne pas commiter de `.jpg` ou de `.png` (CookCLI les servirait en priorité sur le `.webp` du même nom).
 
 **Récupération depuis frije :**
 
@@ -179,10 +181,13 @@ Les images frije suivent le pattern :
 https://fr.frije.com/content/recipes/{ID}/800-1.jpg
 ```
 
-Télécharger avec :
+Télécharger puis convertir :
 ```bash
-curl -f -o nom-recette.jpg "https://fr.frije.com/content/recipes/{ID}/800-1.jpg"
+curl -f -o /tmp/nom-recette.jpg "https://fr.frije.com/content/recipes/{ID}/800-1.jpg"
+cwebp -q 82 -m 6 -metadata none -resize 800 0 /tmp/nom-recette.jpg -o recipes/nom-recette.webp
 ```
+
+`-resize 800 0` ne fait que réduire une image plus large que 800 px : une image déjà plus petite reste à sa taille.
 
 Note : toutes les recettes frije n'ont pas forcément d'image.
 
